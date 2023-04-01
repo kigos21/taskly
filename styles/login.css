@@ -1,0 +1,31 @@
+body {
+    background: linear-gradient(15deg, #FF9494 30%, #FFE3E1);
+}
+
+@media (max-width: 991px) {
+    body {
+        background: linear-gradient(90deg, #FF9494 40%, #FFE3E1);
+    }
+
+    .title-col {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+p.signup-prompt {
+    margin-top: 58px;
+    margin-bottom: 16px;
+}
+
+.login-btn {
+    background: linear-gradient(15deg, #FF9494 50%, #FEB9B9);
+}
+
+.login-btn:hover {
+    background: #ffa9a9;
+}
+
+.login-btn:active {
+    background: #ee8989;
+}

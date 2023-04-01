@@ -20,21 +20,23 @@
     <link rel="stylesheet" href="styles/bootstrap.css" />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/accounts.css" />
-    <link rel="stylesheet" href="styles/login.css" />
+    <link rel="stylesheet" href="styles/signup.css" />
   </head>
 
   <body>
     <main>
-      <div class="blur"></div>
       <div class="main-container container-fluid">
         <div class="main-row row align-items-center">
-          <div class="title-col col-lg-5">
-            <h1>Taskly</h1>
+          <div class="title-col col-lg-5 order-lg-last">
+            <div class="title-wrapper col-lg-12 col-md-8 col-sm-9">
+              <h1>Taskly</h1>
+              <p>get things done.</p>
+            </div>
           </div>
           <div class="form-col col-lg-7 row align-items-center">
-            <div class="form-wrapper col-lg-7 col-md-8 col-sm-9">
-              <h2>Welcome Back</h2>
-              <p>Login to your existing account</p>
+            <div class="form-wrapper col-lg-7 col-md-8 col-sm-9 order-lg-first">
+              <h2>Almost There</h2>
+              <p>Fill in the details</p>
               <form action="">
                 <input
                   type="email"
@@ -51,20 +53,22 @@
                   placeholder="Password"
                 />
                 <input
+                  type="password"
+                  class="form-component form-text"
+                  name=""
+                  id=""
+                  placeholder="Confirm Password"
+                />
+                <input
                   type="submit"
-                  class="form-component form-btn login-btn"
-                  value="Log in"
+                  class="form-component form-btn signup-btn"
+                  value="Sign up"
                 />
               </form>
 
-              <p class="signup-prompt">Don't have an account?</p>
-              <button
-                type="button"
-                onclick="location.href = 'signup.html';"
-                class="form-component form-btn signup-btn"
-              >
-                Sign up
-              </button>
+              <p class="login-prompt">
+                Already have an account? <a href="login.html">Log in</a>
+              </p>
             </div>
           </div>
         </div>

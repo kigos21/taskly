@@ -7,7 +7,6 @@ main,
 }
 
 body {
-    background: linear-gradient(15deg, #FF9494 30%, #FFE3E1);
     text-align: center;
 }
 
@@ -35,8 +34,6 @@ body {
     .title-col {
         height: 30%;
         display: flex;
-        justify-content: center;
-        align-items: center;
     }
 
     .form-col {
@@ -61,7 +58,6 @@ body {
 
 .form-wrapper {
     margin: auto;
-    /* max-width: 332px; */
 }
 
 .form-wrapper h2 {
@@ -70,15 +66,11 @@ body {
 
 .form-wrapper p {
     margin-bottom: 36px;
+    color: #666;
     font-size: 0.75rem;
 }
 
-p.signup-prompt {
-    margin-top: 58px;
-    margin-bottom: 16px;
-}
-
-.form-field {
+.form-component {
     display: block;
     height: 60px;
     width: 100%;
@@ -89,8 +81,12 @@ p.signup-prompt {
 
 .form-text {
     border: none;
-    outline: 1px solid #aaa;
+    outline: 1px solid #ccc;
     transition: 100ms ease-out;
+}
+
+.form-text::placeholder {
+    color: #ccc;
 }
 
 .form-text:focus {
@@ -105,18 +101,23 @@ p.signup-prompt {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
-.login-btn {
-    background: linear-gradient(15deg, #FF9494 50%, #FEB9B9);
-}
-
-.login-btn:hover {
-    background: #FEB9B9;
+.form-btn:active {
+    box-shadow: none;
 }
 
 .signup-btn {
     background-color: #161616;
 }
 
+.signup-btn a {
+    text-decoration: none;
+    color: #fff;
+}
+
 .signup-btn:hover {
     background-color: #303030;
+}
+
+.signup-btn:active {
+    background: #000;
 }
