@@ -56,3 +56,8 @@ p.login-prompt {
     color: #161616;
     font-weight: 600;
 }
+
+.login-prompt a:hover {
+    color: #666;
+    text-decoration: none;
+}
