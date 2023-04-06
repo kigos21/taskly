@@ -12,7 +12,7 @@ if ($password != $confirmPassword) {
 }
 
 // connect to mysql database
-include 'connect.php';
+require_once 'connect.php';
 
 // if email is unique, insert into database
 // else, return error
@@ -28,12 +28,10 @@ if ($result->num_rows > 0) {
 } else {
     // email is unique, proceed
     // prepare the password for insertion
-    $salt = bin2hex(random_bytes(16));
-    $combinedPassword = $salt . $password;
-    $hashedPassword = password_hash($combinedPassword, PASSWORD_DEFAULT);
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     // insert details into database
-    $sql = "INSERT INTO users (email, password, salt) VALUES ('$email', '$hashedPassword', '$salt')";
+    $sql = "INSERT INTO users (email, password) VALUES ('$email', '$hashedPassword')";
     $result = $mysqli->query($sql);
 
     if (!$result) {

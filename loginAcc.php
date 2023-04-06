@@ -3,7 +3,7 @@
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-include 'connect.php';
+require_once 'connect.php';
 
 // check if email exists in database
 $sql = "SELECT * FROM users WHERE email = '$email'";
@@ -19,12 +19,9 @@ if ($result->num_rows == 0) {
 
 // email found, check password
 $row = $result->fetch_assoc();
-$password = $row['password'];
-$salt = $row['salt'];
+$hashedPassword = $row['password'];
 
-// check password
-$combinedPassword = $salt . $password;
-if (password_verify($combinedPassword, $password)) {
+if (password_verify($password, $hashedPassword)) {
     // password correct
     $mysqli->close();
     header('Location: index.html');
