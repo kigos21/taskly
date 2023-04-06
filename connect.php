@@ -1,12 +1,12 @@
 <?php
 
-$host = "localhost";
-$username = "root";
-$password = "";
+$dbhost = "localhost";
+$dbusername = "root";
+$dbpassword = "";
 $database = "taskly";
 
 // Create connection
-$mysqli = new mysqli($host, $username, $password, $database);
+$mysqli = new mysqli($dbhost, $dbusername, $dbpassword, $database);
 
 // Check connection
 if ($mysqli->connect_error) {

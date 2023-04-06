@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+if (isset($_SESSION['email'])) {
+  header('Location: index.php');
+  exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,8 +67,8 @@
             <h2>Welcome Back</h2>
             <p>Login to your existing account</p>
             <form action="loginAcc.php" method="post">
-              <input type="email" class="form-component form-text" name="email" placeholder="Email address" />
-              <input type="password" class="form-component form-text" name="password" placeholder="Password" />
+              <input type="email" required class="form-component form-text" name="email" placeholder="Email address" />
+              <input type="password" required class="form-component form-text" name="password" placeholder="Password" />
               <input type="submit" class="form-component form-btn login-btn" value="Log in" />
             </form>
 

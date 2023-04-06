@@ -23,8 +23,10 @@ $hashedPassword = $row['password'];
 
 if (password_verify($password, $hashedPassword)) {
     // password correct
+    session_start();
+    $_SESSION['email'] = $email;
     $mysqli->close();
-    header('Location: index.html');
+    header('Location: index.php');
     exit();
 } else {
     // password incorrect
