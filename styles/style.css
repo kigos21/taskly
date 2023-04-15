@@ -41,3 +41,21 @@ p {
     padding: 0;
 }
 
+
+/* Navbar styles */
+
+.navbar {
+    padding: 40px 0;
+    background-color: #fff;
+}
+
+.nav-brand {
+    font-size: 2rem;
+    text-shadow: none;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 28px;
+}

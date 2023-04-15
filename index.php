@@ -19,20 +19,80 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="styles/bootstrap.css" />
   <link rel="stylesheet" href="styles/style.css" />
-  <link rel="stylesheet" href="styles/login-signup.css" />
+  <link rel="stylesheet" href="styles/index.css" />
 </head>
 
 <body>
 
-  <?php
-  if (isset($_SESSION['email'])) {
-    echo '<button type="button" onclick="location.href=\'logout.php\';">Log out</button>';
-    echo 'You are logged in as ' . $_SESSION['email'];
-  } else {
-    echo '<button type="button" onclick="location.href=\'login.php\';">Log in</button>';
-    echo '<button type="button" onclick="location.href=\'signup.php\';">Sign up</button>';
-  }
-  ?>
+  <header>
+    <nav class="navbar navbar-expand-sm fixed-top">
+      <div class="container-fluid col-10">
+        <h1 class="nav-brand">Taskly</h1>
+
+        <div class="justify-content-end">
+          <ul class="navbar-nav">
+            <?php
+            if (isset($_SESSION['email'])) {
+              echo '<li class="nav-item">';
+              echo '<a class="nav-link" href="#">Profile</a>';
+              echo '</li>';
+              echo '<li class="nav-item">';
+              echo '<a class="nav-link" href="logout.php">Log out</a>';
+              echo '</li>';
+            } else {
+              echo '<li class="nav-item">';
+              echo '<a class="nav-link" href="login.php">Log in</a>';
+              echo '</li>';
+              echo '<li class="nav-item">';
+              echo '<a class="nav-link" href="signup.php">Sign up</a>';
+              echo '</li>';
+            }
+            ?>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container-fluid col-10">
+      <section class="hero">
+        <div class="row">
+          <div class="col-lg-4 text-center">
+            <img class="img-fluid" src="assets/remote-work.svg" alt="woman working on a computer">
+          </div>
+          <div class="col-lg-6 text-center hero-right-col m-auto">
+            <h1 class="hero-title">Never lose track of tasks</h1>
+            <div class="row hero-buttons">
+              <div class="col-md-6">
+                <button class="hero-btn hero-login" onclick="window.location.href = 'login.php';">Log in</button>
+              </div>
+              <div class="col-md-6">
+                <button class="hero-btn hero-signup" onclick="window.location.href = 'signup.php';">Sign up</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr class="separator">
+      <section class="features text-center">
+        <div class="row">
+          <div class="col-lg">
+            <p>Sleek, simple, modern</p>
+            <img class="img-fluid" src="assets/modern-design.svg">
+          </div>
+          <div class="col-lg">
+            <p>Comes with a calendar</p>
+            <img class="img-fluid" src="assets/schedule-plan.svg">
+          </div>
+          <div class="col-lg">
+            <p>Lightning fast</p>
+            <img class="img-fluid" src="assets/fast-rocket.svg">
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
 
 </body>
 
