@@ -45,7 +45,6 @@ p {
 /* Navbar styles */
 
 .navbar {
-    padding: 40px 0;
     background-color: #fff;
 }
 
@@ -57,5 +56,14 @@ p {
 .navbar-nav {
     display: flex;
     flex-direction: row;
-    gap: 28px;
+}
+
+.nav-link {
+    color: #747474;
+    padding: 8px 14px;
+    border-radius: 8px;
+}
+
+.nav-link:hover {
+    background-color: #f5f5f5;
 }

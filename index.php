@@ -1,4 +1,12 @@
-<?php session_start(); ?>
+<?php
+
+session_start();
+if (isset($_SESSION['email'])) {
+  header('Location: alltasks.php');
+  exit();
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
