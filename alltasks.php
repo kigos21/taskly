@@ -59,21 +59,21 @@ if (!(isset($_SESSION['email']))) {
     <div class="views">
       <p>Views</p>
       <div class="views-list">
-        <button class="views-item active-view">
+        <button class="views-item active-view" onclick="location.href = 'alltasks.php';">
           <i class="fa-solid fa-globe fa-lg"></i><span class="view-text">All</span>
         </button>
         <button class="views-item inactive-view">
           <i class="fa-solid fa-calendar fa-lg"></i><span class="view-text">Month</span>
         </button>
-        <button class="views-item inactive-view">
+        <button class="views-item inactive-view" onclick="location.href = 'todayTasks.php';">
           <i class="fa-solid fa-sun fa-lg"></i><span class="view-text">Today</span>
         </button>
       </div>
     </div>
     <div class="tasks-container">
-      <form action="" method="">
+      <form action="addtask.php" method="post">
         <input class="form-details" type="text" required maxlength="44" name="taskTitleInput" id="taskTitleInput" placeholder="Task title">
-        <input class="form-details" type="date" required name="taskDueInput" id="taskDueInput" placeholder="Due date">
+        <input class="form-details" type="date" required name="taskDueInput" id="taskDueInput" onclick="document.getElementById('taskDueInput').valueAsDate = new Date();">
         <div class="btn-group">
           <input class="form-btn" type="reset" id="resetBtn" value="Clear">
           <input class="form-btn" type="submit" id="submitBtn" value="Add">
@@ -82,43 +82,60 @@ if (!(isset($_SESSION['email']))) {
 
       <div class="hrule"></div>
 
-      <!-- TODO: render data -->
-      <div class="task-item">
-        <div class="task-details">
-          <p class="task-title">Task Title</p>
-          <p class="task-due">Due Date</p>
-        </div>
-        <button class="delete-btn">
-          <i class="fa-solid fa-trash fa-lg" style="color: #555555;"></i>
-        </button>
-      </div>
-      <div class="task-item">
-        <div class="task-details">
-          <p class="task-title">Task Title</p>
-          <p class="task-due">Due Date</p>
-        </div>
-        <button class="delete-btn">
-          <i class="fa-solid fa-trash fa-lg" style="color: #555555;"></i>
-        </button>
-      </div>
-      <div class="task-item">
-        <div class="task-details">
-          <p class="task-title">Prelims_CIP-Task-1</p>
-          <p class="task-due">Due Date</p>
-        </div>
-        <button class="delete-btn">
-          <i class="fa-solid fa-trash fa-lg" style="color: #555555;"></i>
-        </button>
-      </div>
-      <div class="task-item">
-        <div class="task-details">
-          <p class="task-title">123456789012345678901234567890123456789012345678901234567890</p>
-          <p class="task-due">Due Date</p>
-        </div>
-        <button class="delete-btn">
-          <i class="fa-solid fa-trash fa-lg" style="color: #555555;"></i>
-        </button>
-      </div>
+      <!-- Render tasks for the current user  -->
+      <?php
+
+      $email = $_SESSION['email'];
+
+      require_once 'connect.php';
+
+      $sql = "SELECT * FROM `tasks` WHERE `email` LIKE '$email'";
+      $result = $mysqli->query($sql);
+
+      // if no results found
+      if ($result->num_rows == 0) {
+        echo "
+          
+          <div class='task-item'>
+            <div class='task-details'>
+              <p class='task-title'>Your tasks will be shown here</p>
+              <p class='task-due'>with their due date here</p>
+            </div>
+          </div>
+
+          ";
+      }
+
+      // render results
+      else {
+        while ($row = $result->fetch_assoc()) {
+
+          $taskId = $row['taskId'];
+          $taskTitle = $row['taskTitle'];
+          $taskDue = $row['taskDue'];
+
+          echo "
+          
+          <div class='task-item'>
+            <div class='task-details'>
+              <p class='task-title'>$taskTitle</p>
+              <p class='task-due'>$taskDue</p>
+            </div>
+            <form action='deleteTask.php' method='post'>
+              <input type='hidden' name='taskId' value='$taskId'>
+              <button class='delete-btn' type='submit'>
+                <i class='fa-solid fa-trash fa-lg' style='color: #555555;'></i>
+              </button>
+            </form>
+          </div>
+
+          ";
+        }
+      }
+
+      $mysqli->close();
+
+      ?>
     </div>
   </div>
 </body>

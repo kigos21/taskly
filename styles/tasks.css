@@ -213,6 +213,19 @@ html, body {
     background-color: #f0f0f0;
 }
 
+
+
+/* [Today] styles */
+
+.today-heading {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 25px;
+}
+
+/* MEDIA QUERY POINTS */
+
 @media (max-width: 883px) {
     .navbar {
         padding: 0 16px;
@@ -235,5 +248,12 @@ html, body {
         width: 100%;
         max-width: none;
         border-radius: 0;
+    }
+}
+
+@media (max-width: 550px) {
+    .grid-container {
+        grid-template-columns: 25% 75%;
+        grid-template-rows: 64px 1fr;
     }
 }
