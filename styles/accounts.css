@@ -50,6 +50,14 @@ body {
     }
 }
 
+.taskly-title {
+    cursor: pointer;
+}
+
+.taskly-title:hover {
+    text-decoration: underline;
+}
+
 .form-col {
     background: #fff;
     padding: 2rem;
@@ -121,6 +129,7 @@ body {
 .signup-btn:active {
     background: #000;
 }
+
 
 /* Alert box */
 

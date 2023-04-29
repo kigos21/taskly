@@ -2,7 +2,7 @@
 
 session_start();
 if (isset($_SESSION['email'])) {
-  header('Location: index.php');
+  header('Location: alltasks.php');
   exit();
 }
 
@@ -37,7 +37,7 @@ if (isset($_SESSION['email'])) {
     <div class="main-container container-fluid">
       <div class="main-row row align-items-center">
         <div class="title-col col-lg-5">
-          <h1>Taskly</h1>
+          <h1 class="taskly-title" onclick="window.location.href = 'index.php';">Taskly</h1>
         </div>
         <div class="form-col col-lg-7 row align-items-center">
           <div class="form-wrapper col-lg-7 col-md-8 col-sm-9">
