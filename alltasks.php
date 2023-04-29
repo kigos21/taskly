@@ -37,23 +37,12 @@ if (!(isset($_SESSION['email']))) {
     <nav class="navbar">
       <h1 class="nav-brand">Taskly</h1>
       <ul class="navbar-nav">
-        <?php
-        if (isset($_SESSION['email'])) {
-          echo '<li class="nav-item">';
-          echo '<a class="nav-link" href="#">Profile</a>';
-          echo '</li>';
-          echo '<li class="nav-item">';
-          echo '<a class="nav-link" href="logout.php">Log out</a>';
-          echo '</li>';
-        } else {
-          echo '<li class="nav-item">';
-          echo '<a class="nav-link" href="login.php">Log in</a>';
-          echo '</li>';
-          echo '<li class="nav-item">';
-          echo '<a class="nav-link" href="signup.php">Sign up</a>';
-          echo '</li>';
-        }
-        ?>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="logout.php">Log out</a>
+        </li>
       </ul>
     </nav>
     <div class="views">
