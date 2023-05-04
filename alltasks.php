@@ -48,10 +48,10 @@ if (!(isset($_SESSION['email']))) {
     <div class="views">
       <p>Views</p>
       <div class="views-list">
-        <button class="views-item active-view" onclick="location.href = 'alltasks.php';">
+        <button class="views-item active-view" onclick="location.href = 'allTasks.php';">
           <i class="fa-solid fa-globe fa-lg"></i><span class="view-text">All</span>
         </button>
-        <button class="views-item inactive-view">
+        <button class="views-item inactive-view" onclick="location.href = 'monthTasks.php';">
           <i class="fa-solid fa-calendar fa-lg"></i><span class="view-text">Month</span>
         </button>
         <button class="views-item inactive-view" onclick="location.href = 'todayTasks.php';">
@@ -60,7 +60,7 @@ if (!(isset($_SESSION['email']))) {
       </div>
     </div>
     <div class="tasks-container">
-      <form action="addtask.php" method="post">
+      <form action="addTask.php" method="post">
         <input class="form-details" type="text" required maxlength="44" name="taskTitleInput" id="taskTitleInput" placeholder="Task title">
         <input class="form-details" type="date" required name="taskDueInput" id="taskDueInput" onclick="document.getElementById('taskDueInput').valueAsDate = new Date();">
         <div class="btn-group">

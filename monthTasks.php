@@ -1,13 +1,3 @@
-<?php
-
-session_start();
-if (!(isset($_SESSION['email']))) {
-  header('Location: index.php');
-  exit();
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,6 +20,24 @@ if (!(isset($_SESSION['email']))) {
   <!-- Stylesheets -->
   <link rel="stylesheet" href="styles/style.css" />
   <link rel="stylesheet" href="styles/tasks.css" />
+
+  <!-- JS components -->
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.6/index.global.min.js'></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var calendarEl = document.getElementById('calendar');
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        events: [
+          <?php include 'calendarFeed.php' ?>
+        ],
+        eventBackgroundColor: '#ff9494',
+        eventBorderColor: '#ff9494',
+        eventTextColor: '#555555',
+      });
+      calendar.render();
+    });
+  </script>
 </head>
 
 <body>
@@ -51,60 +59,19 @@ if (!(isset($_SESSION['email']))) {
         <button class="views-item inactive-view" onclick="location.href = 'allTasks.php';">
           <i class="fa-solid fa-globe fa-lg"></i><span class="view-text">All</span>
         </button>
-        <button class="views-item inactive-view" onclick="location.href = 'monthTasks.php';">
+        <button class="views-item active-view" onclick="location.href = 'monthTasks.php';">
           <i class="fa-solid fa-calendar fa-lg"></i><span class="view-text">Month</span>
         </button>
-        <button class="views-item active-view" onclick="location.href = 'todayTasks.php';">
+        <button class="views-item inactive-view" onclick="location.href = 'todayTasks.php';">
           <i class="fa-solid fa-sun fa-lg"></i><span class="view-text">Today</span>
         </button>
       </div>
     </div>
-    <div class="tasks-container">
-      <div class="today-heading">Today</div>
-      <div class="hrule"></div>
-
-      <!-- Render tasks for the current user  
-      FILTER: TODAY -->
-      <?php
-
-      $email = $_SESSION['email'];
-
-      require_once 'connect.php';
-
-      $sql = "SELECT * FROM `tasks` WHERE `email` LIKE '$email' AND `taskDue` = CURDATE();";
-      $result = $mysqli->query($sql);
-
-      // if no results found 
-      if ($result->num_rows == 0) {
-        echo "
-        <div class='task-item'>
-          <div class='task-details'>
-            <p class='task-title'>Your tasks will be shown here</p>
-            <p class='task-due'>with their due date here</p>
-          </div>
-        </div>
-        ";
-      }
-
-      // else, render results 
-      else {
-        while ($row = $result->fetch_assoc()) {
-          $taskId = $row['taskId'];
-          $taskTitle = $row['taskTitle'];
-          $taskDue = $row['taskDue'];
-          echo "
-          <div class='task-item'>
-            <div class='task-details'>
-              <p class='task-title'>$taskTitle</p>
-              <p class='task-due'>$taskDue</p>
-            </div>
-          </div>
-          ";
-        }
-      }
-      $mysqli->close(); ?>
+    <div class="third-grid-container">
+      <div class="calendar-container">
+        <div id='calendar'></div>
+      </div>
     </div>
-  </div>
 </body>
 
 </html>

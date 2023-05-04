@@ -2,7 +2,7 @@
 
 session_start();
 if (isset($_SESSION['email'])) {
-  header('Location: alltasks.php');
+  header('Location: allTasks.php');
   exit();
 }
 
@@ -61,7 +61,7 @@ if (isset($_SESSION['email'])) {
 
             <h2>Almost There</h2>
             <p>Fill in the details</p>
-            <form action="registerAcc.php" method="post">
+            <form action="signupAcc.php" method="post">
               <input required type="email" class="form-component form-text" name="email" placeholder="Email address" />
               <input required type="password" class="form-component form-text" name="password" placeholder="Password" />
               <input required type="password" class="form-component form-text" name="confirmPassword" placeholder="Confirm Password" />

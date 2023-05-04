@@ -22,5 +22,5 @@ if (!$result) {
 }
 
 $mysqli->close();
-header('Location: alltasks.php');
+header('Location: allTasks.php');
 exit();

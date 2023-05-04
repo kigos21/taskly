@@ -22,11 +22,11 @@ if (!$result) {
     // error inserting into database
     $error_message = "insert error";
     $mysqli->close();
-    header("Location: alltasks.php?error=" . urlencode($error_message));
+    header("Location: allTasks.php?error=" . urlencode($error_message));
     exit();
 } else {
     // close and redirect
     $mysqli->close();
-    header("Location: alltasks.php?success=1");
+    header("Location: allTasks.php?success=1");
     exit();
 }

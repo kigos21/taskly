@@ -224,6 +224,21 @@ html, body {
     margin-top: 25px;
 }
 
+/* [Month] styles */
+
+.third-grid-container {
+    padding: 0 8px;
+}
+
+.calendar-container {
+    width: 100%;
+    background-color: #f6f6f6;
+    margin: 16px auto;
+    border-radius: 8px;
+    padding: 8px;
+    color: #555;
+}
+
 /* MEDIA QUERY POINTS */
 
 @media (max-width: 883px) {
@@ -249,6 +264,16 @@ html, body {
         max-width: none;
         border-radius: 0;
     }
+
+    .third-grid-container {
+        padding: 0;
+    }
+
+    .calendar-container {
+        margin: 0;
+        border-radius: 0;
+        height: 100%;
+    }
 }
 
 @media (max-width: 550px) {
@@ -256,4 +281,26 @@ html, body {
         grid-template-columns: 25% 75%;
         grid-template-rows: 64px 1fr;
     }
+}
+
+/*  FULL CALENDAR */
+
+:root {
+    --fc-button-text-color: #ffffff;
+    --fc-button-bg-color: #FF9494;
+    --fc-button-border-color: #FF9494;
+    --fc-button-hover-bg-color: #fca8a8;
+    --fc-button-hover-border-color: #fca8a8;
+    --fc-button-active-bg-color: #fca8a8;
+    --fc-button-active-border-color: #fca8a8;
+
+    --fc-today-bg-color: #ffe2e2;
+}
+
+.fc-icon-chevron-right, .fc-icon-chevron-left{
+    color: #ffffff;
+}
+
+.fc-event-title {
+    color: #ffffff;
 }

@@ -26,7 +26,7 @@ if (password_verify($password, $hashedPassword)) {
     session_start();
     $_SESSION['email'] = $email;
     $mysqli->close();
-    header('Location: alltasks.php');
+    header('Location: allTasks.php');
     exit();
 } else {
     // password incorrect
