@@ -55,7 +55,7 @@ if (!(isset($_SESSION['email']))) {
           <input required type="password" name="oldPassword" id="oldPassword" placeholder="Old Password">
           <input required type="password" name="newPassword" id="newPassword" placeholder="New Password">
           <input required type="password" name="confPassword" id="confPassword" placeholder="Confirm Password">
-          <button type="submit">Reset</button>
+          <button type="submit" class="submit-btn">Reset</button>
         </form>
         <!-- Error messages here -->
         <?php
@@ -87,7 +87,7 @@ if (!(isset($_SESSION['email']))) {
       <section class="delete">
         <h2>Delete Account?</h2>
         <form action="deleteAccount.php" method="post">
-          <button type="submit">Delete</button>
+          <button type="submit" class="submit-btn">Delete</button>
         </form>
       </section>
 
@@ -103,6 +103,20 @@ if (!(isset($_SESSION['email']))) {
       ?>
     </div>
   </main>
+
+  <script>
+    const buttons = document.querySelectorAll(".submit-btn");
+    for (const button of buttons) {
+      button.addEventListener("click", confirmDelete);
+    }
+
+    function confirmDelete() {
+      const choice = confirm("Are you sure you want to do this?");
+      if (!choice) {
+        event.preventDefault();
+      }
+    }
+  </script>
 </body>
 
 </html>
