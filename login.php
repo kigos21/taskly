@@ -44,9 +44,16 @@ if (isset($_SESSION['email'])) {
 
             <?php
             if (isset($_GET['success'])) {
-              echo '<div class="alert-box alert alert-success" role="alert">';
-              echo 'Account registered successfully!';
-              echo '</div>';
+              $message = urldecode($_GET['success']);
+              if ($message == 'account deleted') {
+                echo '<div class="alert-box alert alert-success" role="alert">';
+                echo 'Account deleted! Sign up another!';
+                echo '</div>';
+              } else {
+                echo '<div class="alert-box alert alert-success" role="alert">';
+                echo 'Account registered successfully!';
+                echo '</div>';
+              }
             }
 
             // check for errors in GET vars

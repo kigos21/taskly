@@ -1,88 +1,86 @@
 /* Nav style for homepage */
 
 .navbar {
-    padding: 40px 0;
+  padding: 40px 0;
 }
-
 
 /* Main */
 
 .hero {
-    padding: 200px 0 140px 0;
+  padding: 200px 0 140px 0;
 }
 
 .hero img {
-    width: 100%;
-    max-width: 510px;
-    margin-bottom: 50px;
+  width: 100%;
+  max-width: 510px;
+  margin-bottom: 50px;
 }
 
 .hero-right-col {
-    height: 100%;
-    margin: auto 0;
+  height: 100%;
+  margin: auto 0;
 }
 
 .hero-title {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .hero-buttons {
-    margin: 36px auto;
-    max-width: 576px;
+  margin: 36px auto;
+  max-width: 576px;
 }
 
 .hero-btn {
-    height: 64px;
-    width: 100%;
-    background-color: 0;
-    border-style: none;
-    border-radius: 12px;
-    font-weight: 600;
-    margin-bottom: 12px;
+  height: 64px;
+  width: 100%;
+  background-color: 0;
+  border-style: none;
+  border-radius: 12px;
+  font-weight: 600;
+  margin-bottom: 12px;
 }
 
 .hero-login {
-    background-color: rgba(255,255,255,0);
-    border: 1px solid rgba(22, 22, 22, 0.25);
-    color: rgba(22, 22, 22, 0.5);
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid rgba(22, 22, 22, 0.25);
+  color: rgba(22, 22, 22, 0.5);
 }
 
 .hero-login:hover {
-    background-color: rgba(22, 22, 22, 0.05);
+  background-color: rgba(22, 22, 22, 0.05);
 }
 
 .hero-signup {
-    background-color: rgb(255, 148, 148);
-    color: #fff;
+  background-color: rgb(255, 148, 148);
+  color: #fff;
 }
 
 .hero-signup:hover {
-    background-color: rgb(255, 118, 118);
+  background-color: rgb(255, 118, 118);
 }
 
 .separator {
-    width: 40%;
-    margin: 0 auto;
-    border: none;
-    border-top: 1px solid rgba(22, 22, 22, 0.50);
+  width: 40%;
+  margin: 0 auto;
+  border: none;
+  border-top: 1px solid rgba(22, 22, 22, 0.5);
 }
-
 
 /* Features section */
 
 .features {
-    margin: 140px 0;
+  margin: 140px 0;
 }
 
 .features p {
-    margin: 32px 0 48px 0;
+  margin: 32px 0 48px 0;
 }
 
 .features img {
-    width: 100%;
-    max-width: 220px;
+  width: 100%;
+  max-width: 220px;
 }
 
 .features .col-lg {
-    margin-bottom: 100px;
+  margin-bottom: 100px;
 }

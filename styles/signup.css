@@ -1,63 +1,64 @@
 body {
-    background-image: url(../assets/sign-up-abstract.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+  background-image: url(../assets/sign-up-abstract.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 @media (min-width: 992px) {
-    body {
-        background-image: url(../assets/sign-up-abstract.jpg);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
+  body {
+    background-image: url(../assets/sign-up-abstract.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
 }
 
 .title-col {
-    padding: 3rem 2rem;
-    justify-content: end;
+  padding: 3rem 2rem;
+  justify-content: end;
 }
 
 .title-col h1 {
-    color: #FF9494;
-    text-align: end;
+  color: #ff9494;
+  text-align: end;
 }
 
 .title-col p {
-    font-family: 'Outfit', sans-serif;
-    color: #fff;
-    text-align: end;
+  font-family: "Outfit", sans-serif;
+  color: #fff;
+  text-align: end;
 }
 
 @media (min-width: 992px) {
-    .title-col p, .title-col h1 {
-        text-align: center;
-    }
+  .title-col p,
+  .title-col h1 {
+    text-align: center;
+  }
 }
 
 .title-wrapper {
-    margin-left: auto;
-    margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (max-width: 575px) {
-    .title-wrapper {
-        width: 100%;
-    }
+  .title-wrapper {
+    width: 100%;
+  }
 }
 
 p.login-prompt {
-    margin-top: 54px;
+  margin-top: 54px;
 }
 
 .login-prompt a {
-    color: #161616;
-    font-weight: 600;
+  color: #161616;
+  font-weight: 600;
 }
 
 .login-prompt a:hover {
-    color: #666;
-    text-decoration: none;
+  color: #666;
+  text-decoration: none;
 }
