@@ -78,9 +78,23 @@ h2 {
   color: #aaa;
 }
 
+.reset > form > input[type="password"]:focus {
+  border: none;
+  outline: 3px solid #aaa;
+}
+
 .reset > form > button[type="submit"] {
   color: #ffffff;
-  background-color: #161616;
+  background-color: hsl(0, 0%, 9%);
+}
+
+.reset > form > button[type="submit"]:focus {
+  border: none;
+  outline: 3px solid #aaa;
+}
+
+.reset > form > button[type="submit"]:hover {
+  background-color: hsl(0, 0%, 16%);
 }
 
 .alert-box {
@@ -97,12 +111,21 @@ h2 {
 
 .delete > form > button {
   color: #ffffff;
-  background-color: #ff4444;
+  background-color: hsl(0, 100%, 63%);
   padding: 4px 16px;
   border: none;
   border-radius: 32px;
   font-size: 0.875rem;
   font-weight: 600;
+}
+
+.delete > form > button:focus {
+  border: none;
+  outline: 3px solid #aaa;
+}
+
+.delete > form > button:hover {
+  background-color: hsl(0, 100%, 56%);
 }
 
 @media (max-width: 582px) {
