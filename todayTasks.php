@@ -41,7 +41,7 @@ if (!(isset($_SESSION['email']))) {
           <a class="nav-link" href="profile.php">Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="logout.php">Log out</a>
+          <a class="nav-link logout" href="logout.php">Log out</a>
         </li>
       </ul>
     </nav>
@@ -105,6 +105,16 @@ if (!(isset($_SESSION['email']))) {
       $mysqli->close(); ?>
     </div>
   </div>
+
+  <script>
+    const logoutBtn = document.querySelector(".logout");
+    logoutBtn.addEventListener("click", () => {
+      const confirmed = confirm("Do you want to log out of your session?");
+      if (!confirmed) {
+        event.preventDefault();
+      }
+    });
+  </script>
 </body>
 
 </html>
