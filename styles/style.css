@@ -58,6 +58,7 @@ p {
 .navbar-nav {
   display: flex;
   flex-direction: row;
+  gap: 12px;
 }
 
 .nav-link {
