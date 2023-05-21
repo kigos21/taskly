@@ -43,7 +43,7 @@ if (!(isset($_SESSION['email']))) {
     <div class="tasks-container">
       <form action="addTask.php" method="post">
         <input class="form-details" type="text" required maxlength="44" name="taskTitleInput" id="taskTitleInput" placeholder="Task title">
-        <input class="form-details" type="date" required name="taskDueInput" id="taskDueInput" onclick="document.getElementById('taskDueInput').valueAsDate = new Date();">
+        <input class="form-details" type="date" required name="taskDueInput" id="taskDueInput">
         <div class="btn-group">
           <input class="form-btn" type="reset" id="resetBtn" value="Clear">
           <input class="form-btn" type="submit" id="submitBtn" value="Add">
@@ -112,6 +112,15 @@ if (!(isset($_SESSION['email']))) {
   <script src="logout.js" defer></script>
   <script src="taskViews.js" defer></script>
   <script src="deleteTask.js" defer></script>
+  <script>
+    document.querySelector("#taskTitleInput").focus();
+    const dueInputField = document.querySelector("#taskDueInput");
+    dueInputField.addEventListener("focus", () => {
+      if (!dueInputField.value) {
+        dueInputField.valueAsDate = new Date();
+      }
+    });
+  </script>
 </body>
 
 </html>
