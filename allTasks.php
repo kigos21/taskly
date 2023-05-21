@@ -34,31 +34,12 @@ if (!(isset($_SESSION['email']))) {
 
 <body>
   <div class="grid-container">
-    <nav class="navbar">
-      <h1 class="nav-brand">Taskly</h1>
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="profile.php">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link logout" href="logout.php">Log out</a>
-        </li>
-      </ul>
-    </nav>
-    <div class="views">
-      <p>Views</p>
-      <div class="views-list">
-        <button class="views-item active-view" onclick="location.href = 'allTasks.php';">
-          <i class="fa-solid fa-globe fa-lg"></i><span class="view-text">All</span>
-        </button>
-        <button class="views-item inactive-view" onclick="location.href = 'monthTasks.php';">
-          <i class="fa-solid fa-calendar fa-lg"></i><span class="view-text">Month</span>
-        </button>
-        <button class="views-item inactive-view" onclick="location.href = 'todayTasks.php';">
-          <i class="fa-solid fa-sun fa-lg"></i><span class="view-text">Today</span>
-        </button>
-      </div>
-    </div>
+
+    <?php
+    require_once "userNavbar.php";
+    require_once "taskViews.php";
+    ?>
+
     <div class="tasks-container">
       <form action="addTask.php" method="post">
         <input class="form-details" type="text" required maxlength="44" name="taskTitleInput" id="taskTitleInput" placeholder="Task title">
@@ -128,8 +109,9 @@ if (!(isset($_SESSION['email']))) {
     </div>
   </div>
 
-  <script src="deleteTask.js" defer></script>
   <script src="logout.js" defer></script>
+  <script src="taskViews.js" defer></script>
+  <script src="deleteTask.js" defer></script>
 </body>
 
 </html>

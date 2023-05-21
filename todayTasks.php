@@ -34,31 +34,12 @@ if (!(isset($_SESSION['email']))) {
 
 <body>
   <div class="grid-container">
-    <nav class="navbar">
-      <h1 class="nav-brand">Taskly</h1>
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="profile.php">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link logout" href="logout.php">Log out</a>
-        </li>
-      </ul>
-    </nav>
-    <div class="views">
-      <p>Views</p>
-      <div class="views-list">
-        <button class="views-item inactive-view" onclick="location.href = 'allTasks.php';">
-          <i class="fa-solid fa-globe fa-lg"></i><span class="view-text">All</span>
-        </button>
-        <button class="views-item inactive-view" onclick="location.href = 'monthTasks.php';">
-          <i class="fa-solid fa-calendar fa-lg"></i><span class="view-text">Month</span>
-        </button>
-        <button class="views-item active-view" onclick="location.href = 'todayTasks.php';">
-          <i class="fa-solid fa-sun fa-lg"></i><span class="view-text">Today</span>
-        </button>
-      </div>
-    </div>
+
+    <?php
+    require_once "userNavbar.php";
+    require_once "taskViews.php";
+    ?>
+
     <div class="tasks-container">
       <div class="today-heading">Today</div>
       <div class="hrule"></div>
@@ -107,6 +88,7 @@ if (!(isset($_SESSION['email']))) {
   </div>
 
   <script src="logout.js" defer></script>
+  <script src="taskViews.js" defer></script>
 </body>
 
 </html>
