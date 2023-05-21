@@ -128,27 +128,8 @@ if (!(isset($_SESSION['email']))) {
     </div>
   </div>
 
-  <script>
-    const buttons = document.querySelectorAll(".delete-btn");
-    for (const button of buttons) {
-      button.addEventListener("click", confirmDelete);
-    }
-
-    function confirmDelete() {
-      const choice = confirm("Delete task?");
-      if (!choice) {
-        event.preventDefault();
-      }
-    }
-
-    const logoutBtn = document.querySelector(".logout");
-    logoutBtn.addEventListener("click", () => {
-      const confirmed = confirm("Do you want to log out of your session?");
-      if (!confirmed) {
-        event.preventDefault();
-      }
-    });
-  </script>
+  <script src="deleteTask.js" defer></script>
+  <script src="logout.js" defer></script>
 </body>
 
 </html>
