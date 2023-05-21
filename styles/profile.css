@@ -74,23 +74,13 @@ h2 {
 }
 
 .reset > form > input[type="password"] {
-  outline: 1px solid #ccc;
+  border: 1px solid #ccc;
   color: #aaa;
-}
-
-.reset > form > input[type="password"]:focus {
-  border: none;
-  outline: 3px solid #aaa;
 }
 
 .reset > form > button[type="submit"] {
   color: #ffffff;
   background-color: hsl(0, 0%, 9%);
-}
-
-.reset > form > button[type="submit"]:focus {
-  border: none;
-  outline: 3px solid #aaa;
 }
 
 .reset > form > button[type="submit"]:hover {
@@ -117,11 +107,6 @@ h2 {
   border-radius: 32px;
   font-size: 0.875rem;
   font-weight: 600;
-}
-
-.delete > form > button:focus {
-  border: none;
-  outline: 3px solid #aaa;
 }
 
 .delete > form > button:hover {

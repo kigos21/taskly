@@ -88,18 +88,12 @@ body {
 }
 
 .form-text {
-  border: none;
-  outline: 1px solid #ccc;
+  border: 1px solid #ccc;
   transition: 100ms ease-out;
 }
 
 .form-text::placeholder {
   color: #303030;
-}
-
-.form-text:focus {
-  border: none;
-  outline: 3px solid #aaa;
 }
 
 .form-btn {

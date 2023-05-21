@@ -16,6 +16,10 @@ Fonts used:
   color: #161616;
 }
 
+*:focus {
+  outline: 3px solid #aaa;
+}
+
 h1 {
   font-family: "Outfit", sans-serif;
   font-weight: 800;
