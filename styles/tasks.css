@@ -228,6 +228,7 @@ body {
 
 .calendar-container {
   width: 100%;
+  max-width: 1080px;
   background-color: #f6f6f6;
   margin: 16px auto;
   border-radius: 8px;
