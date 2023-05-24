@@ -104,7 +104,7 @@ if (!(isset($_SESSION['email']))) {
     </div>
   </main>
 
-  <script src="profile.php" defer></script>
+  <script src="profile.js" defer></script>
   <script src="logout.js" defer></script>
 </body>
 
